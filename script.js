@@ -19,6 +19,8 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function generatePassword() {
+  // This function starts and ends the process for generating
+  // the new password, including getting the user's preferences
   let newPassword = "";
 
   // Collect the user's preferences for each kind of character
@@ -26,6 +28,14 @@ function generatePassword() {
   let useUpperCase = confirm('Would you like to use upper-case letters in your password? Click "OK" for yes, "Cancel" for no.');
   let useNumerals = confirm('Would you like to use numbers in your password? Click "OK" for yes, "Cancel" for no.');
   let useSpecial = confirm('Would you like to use special characters in your password? Click "OK" for yes, "Cancel" for no.');
+
+  // Create reference object to pass to character generator
+  let kindsOfCharacters = {
+    lowerCase: useLowerCase,
+    upperCase: useUpperCase,
+    numerals: useNumerals,
+    special: useSpecial
+  }
   
   // Test to make sure the user picked at least one kind of character
   // If they didn't, return a pithy response
@@ -36,9 +46,20 @@ function generatePassword() {
 
   // Check to make sure the length value is valid
   // If it isn't, return a pithy response
-  if(!typeof(howMany)=="number" || howMany<1) return "You must provide a valid number of characters. That means a number greater than zero, smarty-pants!";
+  if(!typeof(howMany)=="number" || howMany<8 || howMany>128) return "Come on. You know that the password has to be from 8 to 128 characters. I know that you know. And you know that I know that you know. Get your head out of your bum!";
 
-  console.log(newPassword.length);
 
-  return "Just checking";
+  /* IF WE'VE MADE IT THIS FAR, WE HAVE VALID PARAMETERS */
+
+  while(newPassword.length < howMany) {
+    // until the new password is long enough, add a new character
+    newPassword+=generateCharacter(kindsOfCharacters);
+  }
+
+  return newPassword;
+}
+
+
+function generateCharacter(kinds) {
+  return "a";
 }

@@ -61,5 +61,49 @@ function generatePassword() {
 
 
 function generateCharacter(kinds) {
-  return "a";
+  // We will eventually this variable;
+  let character="";
+
+
+  // Randomely choose a type
+  let randomSelection = Math.floor(Math.random() * 4);
+
+  // Use the random selector to identify the proper array
+  // If the user didn't allow for this type, return an empty string
+
+  let referenceArray;
+
+  switch(randomSelection) {
+    case 0:
+      // lower case letter
+      if (!kinds.lowerCase) return "";
+      referenceArray = letters;
+      break;
+    case 1:
+      // upper case letter
+      if (!kinds.upperCase) return "";
+      referenceArray = letters;
+      break;
+    case 2:
+      // special characters
+      if (!kinds.special) return "";
+      referenceArray = special;
+      break;
+    case 3:
+      // numbers
+      if (!kinds.numerals) return "";
+      break;
+    default:
+      return "";
+  }
+
+  // If the type is a number, randomly choose one. If not,
+  // randomly choose a character from the reference array
+  if ( randomSelection == 3 ) character = Math.floor(Math.random() * 10).toString();
+  else character = referenceArray[Math.floor(Math.random() * referenceArray.length)];
+
+  // Switch to upper case if appropriate
+  if (randomSelection == 1) character = character.toUpperCase();
+
+  return character;
 }

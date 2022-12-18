@@ -1,5 +1,7 @@
 // Available characters
 const letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+const upperLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+const numbers = ["0","1","2","3","4","5","6","7","8","9"];
 const special = ["!","@","#","$","%","^","&","(",")","+","=","-","_","~"];
 
 // Assignment Code
@@ -51,59 +53,14 @@ function generatePassword() {
 
   /* IF WE'VE MADE IT THIS FAR, WE HAVE VALID PARAMETERS */
 
-  while(newPassword.length < howMany) {
-    // until the new password is long enough, add a new character
-    newPassword+=generateCharacter(kindsOfCharacters);
-  }
+  // Concatenate the relevant arrays
+  let noCharacters = [];
+  let allAvailableCharacters = noCharacters.concat(useLowerCase?letters:[], useUpperCase?upperLetters:[], useNumerals?numbers:[], useSpecial?special:[]);
 
+  // Assemble the password
+  for(let i = 0; i < howMany; i++) {
+    newPassword += allAvailableCharacters[Math.floor(Math.random() * allAvailableCharacters.length)];
+  }
+ 
   return newPassword;
-}
-
-
-function generateCharacter(kinds) {
-  // We will eventually this variable;
-  let character="";
-
-
-  // Randomely choose a type
-  let randomSelection = Math.floor(Math.random() * 4);
-
-  // Use the random selector to identify the proper array
-  // If the user didn't allow for this type, return an empty string
-
-  let referenceArray;
-
-  switch(randomSelection) {
-    case 0:
-      // lower case letter
-      if (!kinds.lowerCase) return "";
-      referenceArray = letters;
-      break;
-    case 1:
-      // upper case letter
-      if (!kinds.upperCase) return "";
-      referenceArray = letters;
-      break;
-    case 2:
-      // special characters
-      if (!kinds.special) return "";
-      referenceArray = special;
-      break;
-    case 3:
-      // numbers
-      if (!kinds.numerals) return "";
-      break;
-    default:
-      return "";
-  }
-
-  // If the type is a number, randomly choose one. If not,
-  // randomly choose a character from the reference array
-  if ( randomSelection == 3 ) character = Math.floor(Math.random() * 10).toString();
-  else character = referenceArray[Math.floor(Math.random() * referenceArray.length)];
-
-  // Switch to upper case if appropriate
-  if (randomSelection == 1) character = character.toUpperCase();
-
-  return character;
 }

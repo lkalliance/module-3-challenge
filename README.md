@@ -6,7 +6,7 @@ This is a web page that generates a random password based on parameters that the
 
 If the user's responses to the prompts are in some way invalid, they are "rewarded" with a pithy error message.
 
-(link and screen shot to be added here)
+![screenshot](./images/site-screenshot.png)
 
 ## Usage
 

@@ -29,24 +29,24 @@ function generatePassword() {
 
   // Collect the user's preferences for each kind of character
   let useLowerCase = confirm('Would you like to use lower-case letters in your password? Click "OK" for yes, "Cancel" for no.');
-  let useUpperCase = confirm('Would you like to use upper-case letters in your password? Click "OK" for yes, "Cancel" for no.');
+  let useUpperCase = confirm('Would you like to use UPPER-CASE LETTERS in your password? Click "OK" for yes, "Cancel" for no.');
   let useNumerals = confirm('Would you like to use numbers in your password? Click "OK" for yes, "Cancel" for no.');
-  let useSpecial = confirm('Would you like to use special characters in your password? Click "OK" for yes, "Cancel" for no.');
+  let useSpecial = confirm('Would you like to use "special characters" in your password? Click "OK" for yes, "Cancel" for no.');
 
   
   // Test to make sure the user picked at least one kind of character
   // If they didn't, return a pithy response
-  if(!(useLowerCase || useUpperCase || useNumerals || useSpecial)) return "Well you have to use SOME kind of character! Try again or leave before I contact the authorities.";
+  if(!(useLowerCase || useUpperCase || useNumerals || useSpecial)) return pithyResponse(typeError);
 
   
   // Ask the user how long the password should be
   let howMany = prompt("Finally, how long would you like your password? Enter the number of characters here.");
 
 
-  // Check to make sure the length value is valid
+  // Check to make sure the length value is valid and is an integer
   // If it isn't, return a pithy response
-  if(!typeof(howMany)=="number" || howMany<8 || howMany>128) return "Come on. You know that the password has to be from 8 to 128 characters. I know that you know. And you know that I know that you know. Get your head out of your bum!";
-
+  if(!parseInt(howMany)) return pithyResponse(numberError);
+  else if (howMany<8 || howMany>128) return pithyResponse(lengthError);
 
   /* IF WE'VE MADE IT THIS FAR, WE HAVE VALID PARAMETERS */
 
@@ -62,4 +62,8 @@ function generatePassword() {
   }
  
   return newPassword;
+}
+
+function pithyResponse(responses) {
+  return responses[Math.floor(Math.random() * responses.length)];
 }

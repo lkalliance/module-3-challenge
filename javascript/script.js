@@ -46,7 +46,8 @@ function generatePassword() {
   // Check to make sure the length value is valid and is an integer
   // If it isn't, return a pithy response
   if(!parseInt(howMany)) return pithyResponse(numberError);
-  else if (howMany<8 || howMany>128) return pithyResponse(lengthError);
+  else if (howMany < 8 || howMany > 128) return pithyResponse(lengthError);
+
 
   /* IF WE'VE MADE IT THIS FAR, WE HAVE VALID PARAMETERS */
 
@@ -64,6 +65,8 @@ function generatePassword() {
   return newPassword;
 }
 
+// This function randomly selects a pithy response from the provided array of responses
+// The arrays are defined in the "pithy.js" file.
 function pithyResponse(responses) {
   return responses[Math.floor(Math.random() * responses.length)];
 }

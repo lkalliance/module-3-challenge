@@ -40,7 +40,7 @@ function generatePassword() {
 
   
   // Ask the user how long the password should be
-  let howMany = prompt("Finally, how long would you like your password? Enter the number of characters here.");
+  let howMany = prompt("Finally, how long would you like your password? Enter the number of characters here, from 8 to 128.");
 
 
   // Check to make sure the length value is valid and is an integer

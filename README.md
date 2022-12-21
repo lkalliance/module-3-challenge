@@ -27,6 +27,8 @@ If the set of character types is validated, then the user is given a request for
 
 If the user's inputs pass all validation, then the page assembles a random password within the provided criteria, and sends it to the display box.
 
+On non-mobile browsers only, once a password is successfully generated, a click anywhere in the display box will automatically select the password so the user can copy it. This feature does not work with mobile browsers.
+
 ## Installation
 
 There are no installations necessary for this page to operate. It currently uses just HTML, CSS and Javascript; technologies that are built into any web browser. The browser DOES need to have Javascript enabled.

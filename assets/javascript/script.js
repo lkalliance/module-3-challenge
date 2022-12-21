@@ -6,9 +6,14 @@ const special = ["!","@","#","$","%","^","&","(",")","+","=","-","_","~"];
 
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
+let passwordArea = document.querySelector("#password");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to password field
+passwordArea.addEventListener("click", autoSelect);
+
 
 
 
@@ -19,7 +24,8 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.textContent = password;
+  passwordText.className = password.includes(" ")?"error":"end";
 }
 
 // Generate and return a new password, or a message why user needs to try again
@@ -69,4 +75,18 @@ function generatePassword() {
 // The arrays are defined in the "pithy.js" file.
 function pithyResponse(responses) {
   return responses[Math.floor(Math.random() * responses.length)];
+}
+
+// This function auto-selects the text in the "#password" box when the user clicks or taps on it
+function autoSelect(e) {
+  // check to make sure the content of the field is actually the password
+  // if not, leave now
+  if ( e.target.className != "end" ) return;
+
+  // select the the contents of the div
+  let newPwd = new Range();
+  let text = e.target.firstChild;
+  newPwd.setStart(text, 0);
+  newPwd.setEnd(text, text.length);
+  window.getSelection().addRange(newPwd);
 }

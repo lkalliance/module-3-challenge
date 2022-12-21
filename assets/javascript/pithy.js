@@ -45,7 +45,3 @@ const numberError = [
     "So this is what it's come to. Using non-numerical digits to request a password length from 8 to 128 characters. Please don't do that. Try again.",
     "I'm going to ask you to try again, using only numerical digits to request a password length from 8 to 128 characters. This hurts me more than it hurts you."
 ]
-
-console.log(numberError.length);
-console.log(typeError.length);
-console.log(lengthError.length);

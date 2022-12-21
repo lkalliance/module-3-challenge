@@ -6,7 +6,9 @@ This is a web page that generates a random password based on parameters that the
 
 If the user's responses to the prompts are in some way invalid, they are "rewarded" with a pithy error message.
 
-![screenshot](./images/site-screenshot.png)
+You can access the page at [this location](https://lkalliance.github.io/module-3-challenge/).
+
+![screenshot](./assets/images/site-screenshot.png)
 
 ## Usage
 

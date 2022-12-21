@@ -34,10 +34,10 @@ function generatePassword() {
   let newPassword = "";
 
   // Collect the user's preferences for each kind of character
-  let useLowerCase = confirm('Would you like to use lower-case letters in your password? Click "OK" for yes, "Cancel" for no.');
-  let useUpperCase = confirm('Would you like to use UPPER-CASE LETTERS in your password? Click "OK" for yes, "Cancel" for no.');
-  let useNumerals = confirm('Would you like to use numbers in your password? Click "OK" for yes, "Cancel" for no.');
-  let useSpecial = confirm('Would you like to use "special characters" in your password? Click "OK" for yes, "Cancel" for no.');
+  let useLowerCase = confirm('Would you like to use lower-case letters in your password? Click or tap "OK" for yes, "Cancel" for no.');
+  let useUpperCase = confirm('Would you like to use UPPER-CASE LETTERS in your password? Click or tap "OK" for yes, "Cancel" for no.');
+  let useNumerals = confirm('Would you like to use numbers in your password? Click or tap "OK" for yes, "Cancel" for no.');
+  let useSpecial = confirm('Would you like to use "special characters" in your password? Click or tap "OK" for yes, "Cancel" for no.');
 
   
   // Test to make sure the user picked at least one kind of character

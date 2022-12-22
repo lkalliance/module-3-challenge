@@ -33,6 +33,16 @@ function generatePassword() {
   
   let newPassword = "";
 
+  // Ask the user how long the password should be
+  let howMany = prompt("How long would you like your password to be? Enter the number of characters here, from 8 to 128.");
+
+
+  // Check to make sure the length value is valid and is an integer
+  // If it isn't, return a pithy response
+  if (howMany < 8 || howMany > 128 || parseInt(howMany) === 0) return pithyResponse(lengthError);
+  else if(!parseInt(howMany)) return pithyResponse(numberError);
+
+
   // Collect the user's preferences for each kind of character
   let useLowerCase = confirm('Would you like to use lower-case letters in your password? Click or tap "OK" for yes, "Cancel" for no.');
   let useUpperCase = confirm('Would you like to use UPPER-CASE LETTERS in your password? Click or tap "OK" for yes, "Cancel" for no.');
@@ -45,16 +55,6 @@ function generatePassword() {
   if(!(useLowerCase || useUpperCase || useNumerals || useSpecial)) return pithyResponse(typeError);
 
   
-  // Ask the user how long the password should be
-  let howMany = prompt("Finally, how long would you like your password? Enter the number of characters here, from 8 to 128.");
-
-
-  // Check to make sure the length value is valid and is an integer
-  // If it isn't, return a pithy response
-  if(!parseInt(howMany)) return pithyResponse(numberError);
-  else if (howMany < 8 || howMany > 128) return pithyResponse(lengthError);
-
-
   /* IF WE'VE MADE IT THIS FAR, WE HAVE VALID PARAMETERS */
 
 

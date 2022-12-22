@@ -12,7 +12,7 @@ You can access the page at [this location](https://lkalliance.github.io/module-3
 
 ## Usage
 
-The page has a display box, and a "Generate Password" button. Upon clicking the button, the user is asked for the length in characters they would like for the new password. The number is then validated in two ways: it needs to be between 8 and 128, and it needs to be made up of nuerical digits and no other kinds of characters. If it fails either validation, a descriptive error message is sent to the display box, and the user is invited to try again.
+The page has a display box, and a "Generate Password" button. Upon clicking the button, the user is asked for the length in characters they would like for the new password. The number is then validated in two ways: it needs to be between 8 and 128, and it needs to be made up of numerical digits and no other kinds of characters. If it fails either validation, a descriptive error message is sent to the display box, and the user is invited to try again.
 
 The user is then given four prompts to identify what kinds of characters they would like to be used in their password:
 

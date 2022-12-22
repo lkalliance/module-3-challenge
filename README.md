@@ -12,7 +12,9 @@ You can access the page at [this location](https://lkalliance.github.io/module-3
 
 ## Usage
 
-The page has a display box, and a "Generate Password" button. Upon clicking the button, the user is given four prompts to identify what kinds of characters they would like to be used for their password:
+The page has a display box, and a "Generate Password" button. Upon clicking the button, the user is asked for the length in characters they would like for the new password. The number is then validated in two ways: it needs to be between 8 and 128, and it needs to be made up of nuerical digits and no other kinds of characters. If it fails either validation, a descriptive error message is sent to the display box, and the user is invited to try again.
+
+The user is then given four prompts to identify what kinds of characters they would like to be used in their password:
 
 1. lower-case letters
 2. UPPER-CASE LETTERS
@@ -21,9 +23,7 @@ The page has a display box, and a "Generate Password" button. Upon clicking the 
 
 On each prompt, they are instructed to click "OK" for yes and "Cancel" for no. Special characters are defined in an array in the javascript, which can be edited by the programmer as needed to reflect the acceptable character set.
 
-The user's selections are validated to ensure they have selected at least one character set. If they haven't, an error message is sent to the display box, and the user is invited to try again.
-
-If the set of character types is validated, then the user is given a request for the length of the password. The number is then validated two ways: it needs to be between 8 and 128, and it needs to be made up of actual numerical digits and no other text characters. If it fails either validation, an error message is sent to the display box, and the user is invited to try again.
+The user's selections are validated to ensure they have selected at least one character set. If they haven't, a descriptive error message is sent to the display box, and the user is invited to try again.
 
 If the user's inputs pass all validation, then the page assembles a random password within the provided criteria, and sends it to the display box.
 

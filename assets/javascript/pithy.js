@@ -10,7 +10,7 @@ const typeError = [
     "What do my mom's lasagna and a new password with no character types have in common? I can't make either of them. Please choose at least one character type. Try again.",
     "I don't think you want a password of [nothing]. Please choose at least one character type. Try again.",
     "The concept of the zero is one of the great breakthroughs in the history of mathematics. But zero character types just breaks the password process. Please select at least one. Try again.",
-    "'My name is Password Generator. You killed my chances of fathering a new password for you. Prepare to try again.' Only this time click OK for at least one of the character types.",
+    "'My name is Password Generator. You killed my chances of fathering a new password. Prepare to try again.' Only this time click OK for at least one of the character types.",
     "There once was a man from Nantucket, who put no character types in the bucket. The server was thwarted and the process aborted, so it said to the user go...try again and this time choose at least one of the character types.",
     "Of all the Web pages, in all the sites, in all the Internet, you surf into mine. And without clicking OK on any of the character types. So try again, and this time choose at least one.",
     "So you won't let me use lower-case letters or upper-case letters or numbers or special characters. I guess we just sit here and stare at each other. Or you could try again, and click 'OK' on at least one of them."

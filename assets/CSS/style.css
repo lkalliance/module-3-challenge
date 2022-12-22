@@ -137,7 +137,15 @@ button[disabled] {
     font-size: 0.8rem;
   }
 
+  h2 {
+    font-size: 1.2rem;
+  }
+
   .card {
     padding-top: 2px;
+  }
+
+  #password {
+    font-size: 0.9rem;
   }
 }
